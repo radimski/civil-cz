@@ -163,11 +163,11 @@ button { font: inherit; cursor: pointer; }
   inset: -10%;
   background: url("img/contours.svg") 58% 40% / cover no-repeat;
   opacity: 0.18;
-  animation: land 32s ease-in-out infinite alternate;
+  animation: land 48s ease-in-out infinite alternate;
 }
 @keyframes land {
   from { transform: translate3d(0, 0, 0) scale(1.02); }
-  to { transform: translate3d(-3%, 2%, 0) scale(1.08); }
+  to { transform: translate3d(-1.6%, 1%, 0) scale(1.05); }
 }
 .hero-draw {
   position: absolute;
@@ -176,60 +176,139 @@ button { font: inherit; cursor: pointer; }
   height: 118%;
   pointer-events: none;
   z-index: 0;
-  animation: land 40s ease-in-out infinite alternate;
+  animation: land 56s ease-in-out infinite alternate;
 }
 .hero-draw .dwg-line,
 .hero-draw .dwg-red,
 .hero-draw .dwg-dim,
-.hero-draw .dwg-hatch {
+.hero-draw .dwg-hatch,
+.hero-draw .dwg-cut,
+.hero-draw .dwg-hid,
+.hero-draw .dwg-axis {
   fill: none;
   stroke-linecap: square;
   stroke-linejoin: miter;
 }
-.hero-draw .dwg-line { stroke: rgba(255, 255, 255, 0.48); stroke-width: 1.2; }
-.hero-draw .dwg-red { stroke: rgba(192, 0, 0, 0.72); stroke-width: 1.45; }
-.hero-draw .dwg-dim { stroke: rgba(255, 255, 255, 0.28); stroke-width: 0.9; }
-.hero-draw .dwg-hatch { stroke: rgba(255, 255, 255, 0.24); stroke-width: 0.7; }
-.hero-draw .dwg-fill { fill: url(#hatch); stroke: rgba(255, 255, 255, 0.22); stroke-width: 1; opacity: 0; animation: hatch-in 18s ease-in-out infinite; }
-.hero-draw .s2 .dwg-fill { animation-delay: 1.1s; }
-.hero-draw .s6 .dwg-fill { animation-delay: 5.6s; }
-.hero-draw circle.dwg-red { fill: rgba(192, 0, 0, 0.55); }
+.hero-draw .dwg-line { stroke: rgba(255, 255, 255, 0.5); stroke-width: 1.05; }
+.hero-draw .dwg-cut { stroke: rgba(255, 255, 255, 0.62); stroke-width: 2.05; }
+.hero-draw .dwg-red { stroke: rgba(192, 0, 0, 0.78); stroke-width: 1.35; }
+.hero-draw .dwg-dim { stroke: rgba(255, 255, 255, 0.3); stroke-width: 0.75; }
+.hero-draw .dwg-hatch { stroke: rgba(255, 255, 255, 0.28); stroke-width: 0.65; }
+.hero-draw .dwg-hid { stroke: rgba(255, 255, 255, 0.32); stroke-width: 0.85; }
+.hero-draw .dwg-axis { stroke: rgba(255, 255, 255, 0.28); stroke-width: 0.7; }
+.hero-draw .dwg-fill { fill: url(#hatch); fill-rule: evenodd; stroke: rgba(255, 255, 255, 0.22); stroke-width: 0.8; opacity: 0; animation: hatch-in 28s ease-in-out infinite; }
+.hero-draw .dwg-earth { fill: url(#hatch-earth); }
+.hero-draw .dwg-insul { fill: url(#hatch-insul); }
+.hero-draw .s1 .dwg-fill { animation-delay: 0s; }
+.hero-draw .s2 .dwg-fill { animation-delay: 0.8s; }
+.hero-draw .s3 .dwg-fill { animation-delay: 1.6s; }
+.hero-draw .s5 .dwg-fill { animation-delay: 3.1s; }
+.hero-draw .s6 .dwg-fill { animation-delay: 3.6s; }
+.hero-draw circle.dwg-red { fill: rgba(192, 0, 0, 0.18); }
+.hero-draw .dwg-note {
+  fill: rgba(255, 255, 255, 0.42);
+  stroke: none;
+  font-family: var(--ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  animation: ink-fade 28s ease-in-out infinite;
+}
+.hero-draw .dwg-kote {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+.hero-draw .dwg-axis-lbl {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+  fill: rgba(255, 220, 220, 0.85);
+}
 .hero-draw .dwg-line,
 .hero-draw .dwg-red,
-.hero-draw .dwg-dim {
-  stroke-dasharray: 420;
-  stroke-dashoffset: 420;
-  animation: ink 18s ease-in-out infinite;
+.hero-draw .dwg-dim,
+.hero-draw .dwg-cut {
+  stroke-dasharray: 480;
+  stroke-dashoffset: 480;
+  animation:
+    ink-draw 28s linear infinite,
+    ink-fade 28s ease-in-out infinite;
+}
+.hero-draw .dwg-hid {
+  stroke-dasharray: 7 5;
+  stroke-dashoffset: 0;
+  animation: ink-fade 28s ease-in-out infinite;
+}
+.hero-draw .dwg-axis {
+  stroke-dasharray: 11 5 2 5;
+  stroke-dashoffset: 0;
+  animation: ink-fade 28s ease-in-out infinite;
+}
+.hero-draw .dwg-hatch {
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+  animation: none;
 }
 .hero-draw .s1 .dwg-line,
 .hero-draw .s1 .dwg-red,
-.hero-draw .s1 .dwg-dim { animation-delay: 0s; }
+.hero-draw .s1 .dwg-dim,
+.hero-draw .s1 .dwg-cut { animation-delay: 0s, 0s; }
+.hero-draw .s1 .dwg-hid,
+.hero-draw .s1 .dwg-axis,
+.hero-draw .s1 .dwg-note { animation-delay: 0s; }
 .hero-draw .s2 .dwg-line,
 .hero-draw .s2 .dwg-red,
-.hero-draw .s2 .dwg-dim { animation-delay: 1.1s; }
+.hero-draw .s2 .dwg-dim,
+.hero-draw .s2 .dwg-cut { animation-delay: 0.8s, 0.8s; }
+.hero-draw .s2 .dwg-hid,
+.hero-draw .s2 .dwg-axis,
+.hero-draw .s2 .dwg-note { animation-delay: 0.8s; }
 .hero-draw .s3 .dwg-line,
 .hero-draw .s3 .dwg-red,
-.hero-draw .s3 .dwg-dim { animation-delay: 2.2s; }
+.hero-draw .s3 .dwg-dim,
+.hero-draw .s3 .dwg-cut { animation-delay: 1.6s, 1.6s; }
+.hero-draw .s3 .dwg-hid,
+.hero-draw .s3 .dwg-axis,
+.hero-draw .s3 .dwg-note { animation-delay: 1.6s; }
 .hero-draw .s4 .dwg-line,
 .hero-draw .s4 .dwg-red,
-.hero-draw .s4 .dwg-dim { animation-delay: 3.4s; }
+.hero-draw .s4 .dwg-dim,
+.hero-draw .s4 .dwg-cut { animation-delay: 2.4s, 2.4s; }
+.hero-draw .s4 .dwg-hid,
+.hero-draw .s4 .dwg-axis,
+.hero-draw .s4 .dwg-note { animation-delay: 2.4s; }
 .hero-draw .s5 .dwg-line,
 .hero-draw .s5 .dwg-red,
-.hero-draw .s5 .dwg-dim { animation-delay: 4.6s; }
+.hero-draw .s5 .dwg-dim,
+.hero-draw .s5 .dwg-cut { animation-delay: 3.1s, 3.1s; }
+.hero-draw .s5 .dwg-hid,
+.hero-draw .s5 .dwg-axis,
+.hero-draw .s5 .dwg-note { animation-delay: 3.1s; }
 .hero-draw .s6 .dwg-line,
 .hero-draw .s6 .dwg-red,
-.hero-draw .s6 .dwg-dim { animation-delay: 5.6s; }
+.hero-draw .s6 .dwg-dim,
+.hero-draw .s6 .dwg-cut { animation-delay: 3.6s, 3.6s; }
+.hero-draw .s6 .dwg-hid,
+.hero-draw .s6 .dwg-axis,
+.hero-draw .s6 .dwg-note { animation-delay: 3.6s; }
 @keyframes hatch-in {
-  0%, 10% { opacity: 0; }
-  22%, 68% { opacity: 0.85; }
-  86%, 100% { opacity: 0.2; }
+  0%, 12% { opacity: 0; }
+  32%, 70% { opacity: 0.65; }
+  86%, 100% { opacity: 0; }
 }
-@keyframes ink {
-  0% { stroke-dashoffset: 420; opacity: 0.35; }
-  14% { stroke-dashoffset: 0; opacity: 1; }
-  68% { stroke-dashoffset: 0; opacity: 0.9; }
-  86% { stroke-dashoffset: 420; opacity: 0.4; }
-  100% { stroke-dashoffset: 420; opacity: 0.35; }
+@keyframes ink-draw {
+  0% { stroke-dashoffset: 480; }
+  38% { stroke-dashoffset: 0; }
+  78% { stroke-dashoffset: 0; }
+  79%, 100% { stroke-dashoffset: 480; }
+}
+@keyframes ink-fade {
+  0% { opacity: 0; }
+  8% { opacity: 0.72; }
+  38% { opacity: 0.95; }
+  72% { opacity: 0.8; }
+  88%, 100% { opacity: 0; }
 }
 .hero-layout {
   position: relative;
@@ -736,7 +815,11 @@ html.js [data-reveal="4"].is-in { transition-delay: 0.21s; }
   .hero-draw .dwg-line,
   .hero-draw .dwg-red,
   .hero-draw .dwg-dim,
-  .hero-draw .dwg-fill {
+  .hero-draw .dwg-cut,
+  .hero-draw .dwg-hid,
+  .hero-draw .dwg-axis,
+  .hero-draw .dwg-fill,
+  .hero-draw .dwg-note {
     animation: none;
     stroke-dashoffset: 0;
     opacity: 0.45;
