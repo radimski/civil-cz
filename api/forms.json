@@ -1,0 +1,42 @@
+{
+  "_comment": "Single source of truth for every form. The engine refuses unknown form ids and drops unknown fields.",
+  "forms": {
+    "poptavka": {
+      "label": "Poptávka z webu",
+      "to": ["podatelna@civil.cz"],
+      "cc": [],
+      "subject": "Poptávka z webu — {sluzba}, {jmeno}",
+      "replyTo": "email",
+      "minSeconds": 3,
+      "maxPerHour": 5,
+      "maxPerDay": 20,
+      "store": true,
+      "fields": {
+        "jmeno": { "type": "text", "label": "Jméno a příjmení", "required": true, "min": 2, "max": 100 },
+        "telefon": { "type": "tel", "label": "Telefon", "required": true, "max": 40 },
+        "email": { "type": "email", "label": "E-mail", "required": false, "max": 200 },
+        "sluzba": {
+          "type": "select",
+          "label": "Typ poptávky",
+          "required": true,
+          "options": [
+            "Stavební projekce",
+            "Dopravní projekce",
+            "Sportoviště a hřiště",
+            "Zdravotechnika / voda / kanalizace",
+            "Plyn / topení / větrání",
+            "Elektro",
+            "Požární bezpečnost",
+            "Rozpočty",
+            "Inženýrská činnost",
+            "Poradenství",
+            "Jiné"
+          ]
+        },
+        "zprava": { "type": "textarea", "label": "Popis záměru", "required": true, "min": 5, "max": 4000, "maxLinks": 1 },
+        "souhlas": { "type": "consent", "label": "Souhlas se zpracováním osobních údajů", "required": true },
+        "lang": { "type": "hidden", "label": "Jazyk", "max": 5 }
+      }
+    }
+  }
+}

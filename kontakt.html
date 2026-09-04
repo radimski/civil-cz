@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt | CIVIL PROJECTS</title>
+<meta name="description" content="Telefony, e-maily a poptávkový formulář CIVIL PROJECTS s.r.o.">
+<link rel="canonical" href="https://www.civil.cz/kontakt.html">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="styles.css?v=5">
+
+</head>
+<body class="civil" data-form-endpoint="/api/form.php" data-turnstile-site-key="">
+<a class="skip" href="#obsah">Přeskočit na obsah</a>
+<header class="site-header" data-header>
+  <div class="wrap header-bar">
+    <a class="logo-link" href="index.html" aria-label="CIVIL PROJECTS s.r.o.">
+      <img class="logo" src="img/logo.jpg" width="304" height="94" alt="CIVIL PROJECTS s.r.o.">
+    </a>
+    <nav class="nav-desktop" aria-label="Hlavní">
+      <a class="nav-link" href="index.html">Úvod</a>
+      <a class="nav-link" href="sluzby.html">Služby</a>
+      <a class="nav-link" href="reference.html">Reference</a>
+      <a class="nav-link" href="o-firme.html">O firmě</a>
+      <a class="nav-link" href="kontakt.html" aria-current="page">Kontakt</a>
+    </nav>
+    <a class="header-cta" href="tel:+420603536245">603 536 245</a>
+    <button type="button" class="menu-btn" data-nav-toggle aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+  </div>
+  <div id="mobile-nav" class="nav-mobile" hidden>
+    <nav class="wrap" aria-label="Mobilní">
+      <a class="btn btn-red" href="tel:+420603536245">Zavolat 603 536 245</a>
+      <a href="index.html">Úvod</a>
+      <a href="sluzby.html">Služby</a>
+      <a href="reference.html">Reference</a>
+      <a href="o-firme.html">O firmě</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+  </div>
+</header>
+<div id="obsah" class="civil-main">
+<section class="page-head"><div class="wrap">
+    <p class="kicker">Kontakt</p>
+    <h1>Ústředna</h1>
+    <div class="contact-split">
+      <dl class="facts">
+        <div><dt>Telefon</dt><dd><a class="phone" href="tel:+420603536245">603 536 245</a></dd></div>
+        <div><dt>Fax</dt><dd>552 302 608</dd></div>
+        <div><dt>E-mail</dt><dd><a href="mailto:podatelna@civil.cz">podatelna@civil.cz</a></dd></div>
+        <div><dt>Datová schránka</dt><dd>82aeb3x</dd></div>
+        <div><dt>Mapa</dt><dd><a href="https://mapy.cz/s/5tuQ" target="_blank" rel="noopener noreferrer">Mapy.cz — sídlo</a></dd></div>
+      </dl>
+      <form class="form" data-form="poptavka" novalidate
+        data-msg-sending="Odesíláme…"
+        data-msg-success="Děkujeme, poptávku jsme přijali."
+        data-msg-error="Formulář se nepodařilo odeslat. Zavolejte prosím na 603 536 245."
+        data-msg-required="Zkontrolujte zvýrazněná pole."
+        data-msg-email="Zadejte platnou e-mailovou adresu."
+        data-msg-tel="Zadejte platné telefonní číslo."
+        data-msg-min="Hodnota je příliš krátká."
+        data-msg-max="Hodnota je příliš dlouhá."
+        data-msg-option="Vyberte jednu z možností."
+        data-msg-date="Zadejte platný datum."
+        data-msg-pattern="Hodnota nemá správný tvar."
+        data-msg-type="Hodnota nemá správný tvar."
+        data-msg-rate="Příliš mnoho odeslání. Zkuste to později."
+        data-msg-offline="Jste offline. Zkontrolujte připojení."
+        data-msg-captcha="Potvrďte, že nejste robot.">
+        <h3>Poptávka</h3>
+        <div class="form-row">
+          <label>Jméno a příjmení<input type="text" name="jmeno" autocomplete="name" required minlength="2" maxlength="100"></label>
+          <label>Telefon<input type="tel" name="telefon" autocomplete="tel" required maxlength="40"></label>
+        </div>
+        <label>E-mail<input type="email" name="email" autocomplete="email" maxlength="200"></label>
+        <label>Typ poptávky
+          <select name="sluzba" required>
+            <option value="">Vyberte</option>
+            <option>Stavební projekce</option>
+            <option>Dopravní projekce</option>
+            <option>Sportoviště a hřiště</option>
+            <option>Zdravotechnika / voda / kanalizace</option>
+            <option>Plyn / topení / větrání</option>
+            <option>Elektro</option>
+            <option>Požární bezpečnost</option>
+            <option>Rozpočty</option>
+            <option>Inženýrská činnost</option>
+            <option>Poradenství</option>
+            <option>Jiné</option>
+          </select>
+        </label>
+        <label>Popis záměru<textarea name="zprava" rows="5" required minlength="5" maxlength="4000"></textarea></label>
+        <label class="consent"><input type="checkbox" name="souhlas" required><span>Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky. Více v <a href="ochrana-osobnich-udaju.html">zásadách</a>.</span></label>
+        <div data-turnstile></div>
+        <button type="submit" class="btn btn-red" data-form-submit>Odeslat poptávku</button>
+        <p class="form-status" data-form-status role="status" aria-live="polite" hidden></p>
+      </form>
+    </div>
+    <h2>Lidé</h2>
+    <ul class="people">
+      <li><h3>Ing. Zdeněk Loup</h3><p>Vedení společnosti, rozpočty</p><p class="phone"><a href="tel:+420603536245">603 536 245</a></p><p><a class="team-mail" href="mailto:loup@civil.cz">loup@civil.cz</a></p></li>
+      <li><h3>Ing. Petr Lanc</h3><p>Vedení, stavební projekce, statika, PBŘ</p><p class="phone"><a href="tel:+420605533959">605 533 959</a></p><p><a class="team-mail" href="mailto:lanc@civil.cz">lanc@civil.cz</a></p></li>
+      <li><h3>Ing. Petr Kolařík</h3><p>Stavební a dopravní projekce</p><p class="phone"><a href="tel:+420605432779">605 432 779</a></p><p><a class="team-mail" href="mailto:kolarik@civil.cz">kolarik@civil.cz</a></p></li>
+      <li><h3>Ing. Barbora Marenčáková</h3><p>Stavební a dopravní projekce</p><p class="phone"><a href="tel:+420732238454">732 238 454</a></p><p><a class="team-mail" href="mailto:marencakova@civil.cz">marencakova@civil.cz</a></p></li>
+      <li><h3>Zdeněk Hložánka</h3><p>Projekce elektro, veřejné osvětlení</p><p class="phone"><a href="tel:+420737443626">737 443 626</a></p><p><a class="team-mail" href="mailto:elektro@civil.cz">elektro@civil.cz</a></p></li>
+    </ul>
+  </div></section>
+</div>
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="stamp-firm">CIVIL PROJECTS s.r.o.</p>
+      <p>Malý Koloredov 2377<br>738 02 Frýdek-Místek</p>
+      <p>IČO 24306606 · DIČ CZ24306606</p>
+    </div>
+    <div>
+      <h2>Kontakt</h2>
+      <p><a href="tel:+420603536245">603 536 245</a></p>
+      <p><a href="mailto:podatelna@civil.cz">podatelna@civil.cz</a></p>
+      <p><a href="https://mapy.cz/s/5tuQ" target="_blank" rel="noopener noreferrer">Mapy.cz</a></p>
+    </div>
+    <div>
+      <h2>Služby</h2>
+      <ul class="legal-nav">
+        <li><a href="projekce.html">Projekční činnost</a></li>
+        <li><a href="inzenyring.html">Inženýrská činnost</a></li>
+        <li><a href="poradenstvi.html">Poradenství</a></li>
+      </ul>
+    </div>
+    <nav aria-label="Právní informace">
+      <h2>Informace</h2>
+      <ul class="legal-nav">
+        <li><a href="provozovatel.html">Provozovatel</a></li>
+        <li><a href="ochrana-osobnich-udaju.html">Ochrana osobních údajů</a></li>
+        <li><a href="cookies.html">Cookies</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p class="wrap footer-bar">© 2026 CIVIL PROJECTS s.r.o.</p>
+</footer>
+<script src="main.js?v=5" defer></script>
+<script src="form.js?v=5" defer></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+# secrets
+api/config.php
+api/data/*
+!api/data/.gitkeep
+!api/data/.htaccess
+
+# local-only (not on GitHub) — same as otevru-cz / kolmo-kafe
+build/
+export/
+ftp/
+_old_site/
+HANDOVER.md
+DEPLOY.md
+RULEBOOK.md
+package.json
+package-lock.json
+node_modules/
+
+.DS_Store
+Thumbs.db
+*.pem

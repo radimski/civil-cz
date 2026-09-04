@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none" aria-hidden="true">
+  <g stroke="#fff" stroke-width="1.15" opacity="0.28">
+    <ellipse cx="1180" cy="210" rx="620" ry="250"/>
+    <ellipse cx="1160" cy="230" rx="540" ry="210"/>
+    <ellipse cx="1145" cy="248" rx="460" ry="172"/>
+    <ellipse cx="1132" cy="262" rx="380" ry="136"/>
+    <ellipse cx="1122" cy="274" rx="300" ry="102"/>
+    <ellipse cx="1114" cy="284" rx="220" ry="70"/>
+    <ellipse cx="1108" cy="292" rx="140" ry="40"/>
+    <ellipse cx="360" cy="560" rx="480" ry="210"/>
+    <ellipse cx="380" cy="575" rx="400" ry="170"/>
+    <ellipse cx="396" cy="588" rx="322" ry="132"/>
+    <ellipse cx="410" cy="598" rx="248" ry="96"/>
+    <ellipse cx="420" cy="606" rx="176" ry="64"/>
+    <ellipse cx="428" cy="612" rx="108" ry="36"/>
+    <ellipse cx="980" cy="640" rx="340" ry="150"/>
+    <ellipse cx="990" cy="652" rx="260" ry="112"/>
+    <ellipse cx="998" cy="662" rx="186" ry="76"/>
+    <ellipse cx="1004" cy="670" rx="112" ry="42"/>
+  </g>
+  <path d="M-40 430 C 180 390, 280 510, 470 455 S 760 310, 980 360 1280 470, 1640 400" stroke="#c00000" stroke-width="1.8" opacity="0.7"/>
+  <g fill="#c00000" opacity="0.7">
+    <circle cx="180" cy="402" r="2.4"/>
+    <circle cx="470" cy="455" r="2.4"/>
+    <circle cx="980" cy="360" r="2.4"/>
+    <circle cx="1280" cy="430" r="2.4"/>
+  </g>
+</svg>
