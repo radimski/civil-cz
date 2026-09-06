@@ -231,11 +231,27 @@
     // Let the browser do the first pass. It knows the visitor's language for
     // built-in messages and it is instant.
     if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
-      var bad = form.querySelector(':invalid');
-      if (bad) {
-        markField(form, bad.name, state.msg.required);
-        focus(bad);
+      var invalids = form.querySelectorAll(':invalid');
+      var first = null;
+      for (var i = 0; i < invalids.length; i++) {
+        var bad = invalids[i];
+        if (!bad.name) continue;
+        if (!first) first = bad;
+        var msg = state.msg.required;
+        if (bad.validity) {
+          if (bad.validity.typeMismatch) {
+            if (bad.type === 'email') msg = state.msg.email;
+            else if (bad.type === 'tel') msg = state.msg.tel;
+            else msg = state.msg.type;
+          } else if (bad.validity.tooShort || bad.validity.rangeUnderflow) {
+            msg = state.msg.min;
+          } else if (bad.validity.valueMissing && bad.tagName === 'SELECT') {
+            msg = state.msg.option;
+          }
+        }
+        markField(form, bad.name, msg);
       }
+      if (first) focus(first);
       say(state, 'error', state.msg.required);
       return;
     }
@@ -394,7 +410,7 @@
       note = document.createElement('span');
       note.id = id;
       note.setAttribute('data-form-error', '');
-      note.style.cssText = 'display:block;margin-top:.35rem;font-size:.8125rem;color:#b91c1c';
+      note.className = 'form-field-error';
       // After the field's own wrapper where there is one, so the message does
       // not land between the label and the input.
       var host = field.closest('label') || field.parentNode;
