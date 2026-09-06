@@ -708,12 +708,21 @@ h2 {
 .facts { margin: 0; border-top: 1px solid var(--ink); }
 .facts > div {
   display: grid;
-  gap: 0.15rem;
-  padding: 0.8rem 0;
+  grid-template-columns: 9.75rem minmax(0, 1fr);
+  gap: 0.5rem 1.25rem;
+  align-items: center;
+  padding: 0.35rem 0;
   border-bottom: 1px solid var(--line);
 }
 @media (min-width: 520px) {
-  .facts > div { grid-template-columns: 9.5rem 1fr; align-items: baseline; }
+  .facts > div { grid-template-columns: 11.5rem minmax(0, 1fr); }
+}
+.facts dt,
+.facts dd {
+  margin: 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 .facts dt {
   font-size: 0.68rem;
@@ -722,7 +731,10 @@ h2 {
   font-weight: 800;
   color: var(--muted);
 }
-.facts dd { margin: 0; font-weight: 700; }
+.facts dd {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
 .facts a { text-decoration: none; }
 .facts a:hover { color: var(--red); }
 
