@@ -3,7 +3,7 @@
   --red-dark: #8a0000;
   --ink: #141414;
   --ink-soft: #3a3a3a;
-  --muted: #5c5c5c;
+  --muted: #4a4a4a;
   --paper: #f3f1eb;
   --paper-2: #ebe7de;
   --white: #fcfbf8;
@@ -40,6 +40,9 @@ button { font: inherit; cursor: pointer; }
   left: 0.75rem;
   top: -3rem;
   z-index: 80;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   padding: 0.5rem 0.75rem;
   background: var(--white);
   color: var(--ink);
@@ -79,7 +82,12 @@ button { font: inherit; cursor: pointer; }
 @media (min-width: 900px) {
   .header-bar { gap: 1rem; }
 }
-.logo-link { display: flex; align-items: center; min-width: 0; }
+.logo-link {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 44px;
+}
 .logo { height: 1.85rem; width: auto; }
 @media (min-width: 480px) {
   .logo { height: 2.4rem; }
@@ -420,7 +428,7 @@ button { font: inherit; cursor: pointer; }
   font-size: 0.62rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.62);
   font-weight: 700;
 }
 
@@ -436,7 +444,7 @@ button { font: inherit; cursor: pointer; }
   transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 .btn-red { background: var(--red); color: #fff; }
-.btn-red:hover { background: #d01010; }
+.btn-red:hover { background: var(--red-dark); }
 .btn-ghost {
   background: transparent;
   color: #fff;
@@ -444,11 +452,13 @@ button { font: inherit; cursor: pointer; }
 }
 .btn-ghost:hover { border-color: #fff; }
 .btn-dark { background: var(--ink); color: #fff; }
+.btn-dark:hover { background: #2a2a2a; }
 .btn-outline {
   background: transparent;
   color: var(--ink);
   border: 1px solid var(--ink);
 }
+.btn-outline:hover { background: var(--ink); color: #fff; }
 
 .section, .page-head { padding: 3.8rem 0; }
 .section-alt { background: var(--paper-2); }
@@ -593,11 +603,17 @@ h2 {
   font-size: 1.12rem;
   padding-top: 0.12rem;
 }
-.schedule h3 { margin: 0 0 0.28rem; font-size: 1.08rem; }
+.schedule h2 {
+  margin: 0 0 0.28rem;
+  font-size: 1.08rem;
+  font-family: inherit;
+  font-style: normal;
+  line-height: 1.25;
+}
 .schedule p { margin: 0; color: var(--ink-soft); line-height: 1.55; }
 .schedule p + p { margin-top: 0.45rem; }
 .schedule a { font-weight: 700; color: var(--red); text-decoration: none; }
-.schedule li:hover h3 { color: var(--red); }
+.schedule li:hover h2 { color: var(--red); }
 
 .metrics {
   display: grid;
@@ -668,6 +684,7 @@ h2 {
   font-size: 0.82rem;
   color: var(--muted);
 }
+.filter:hover { color: var(--ink); }
 .filter[aria-pressed="true"] {
   color: var(--red);
   border-bottom-color: var(--red);
@@ -738,7 +755,7 @@ h2 {
 .facts a { text-decoration: none; }
 .facts a:hover { color: var(--red); }
 
-.form h3 {
+.form h2 {
   margin: 0 0 1rem;
   font-family: var(--display);
   font-style: italic;
